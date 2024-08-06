@@ -1,5 +1,4 @@
-(ns basics.core
-  (:gen-class))
+(ns basics.basics)
 
 (defn greet-user [user]
   (println (str "hello " user)))
