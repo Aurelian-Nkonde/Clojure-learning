@@ -1,5 +1,7 @@
 (ns basics.core)
-(require 'clojure.string)
+;(require 'clojure.string)
+(require 'clojure.data)
+(require '[clojure.string :as string])
 
 (def asym-body-parts [
                       {:name "left-hear" :size 90}
@@ -93,9 +95,24 @@
 ;(println (user-with-languages-1 {:name "thomas" :language :shona}))
 ;(println (user-with-languages-1 {:name "anashe" :language :english}))
 
+(def anonymouse-book
+  {:title "gods must be crazy"})
+(def book-with-authour
+  {:title "the rainy season" :author "james johns"})
+(defn uppercase-author [book]
+  (let [author (:author book)]
+    (if author
+      (.toUpperCase author))))
+(println (uppercase-author book-with-authour))
+(defn uppercase-author-2 [book]
+  (if-let [author (:author book)]
+    (.toUpperCase author)))
+(println (uppercase-author-2 book-with-authour))
+
 
 (defn -main
   []
+  (println *ns*)
   )
 
 ;list
@@ -148,3 +165,9 @@
 
 ;:pre condition, checks on the value passed to the function
 ;:post condition, checks on the value returned by the function
+
+;if-let, is an if and let combined together
+;get the current namespace *ns*
+;look up existing namespaces with (find-sn name)
+
+;create a namespace with (ns new-namespace)
