@@ -171,3 +171,21 @@
 ;look up existing namespaces with (find-sn name)
 
 ;create a namespace with (ns new-namespace)
+
+;(type concrete-data) to the type of the data type
+
+;create a sequence from collection data types
+;(seq []) (seq {}) (seq '())
+;(first (seq [1 2])) to get the first value
+;(last (seq [1 2])) to get the last value**
+;(rest (seq [1 2])) to get all elements except the first
+;(next (seq [1 2])) to get all elements except the first
+;add new element to front with seq, (cons "john" (seq '("anna")))
+;Things you can only do with sequences, create(seq []), add values (cons "value" (seq [])), (rest (seq[]))
+;(first (seq [])), (next (seq []))
+
+;(sort (seq []))
+;(reverse (seq [])), (reverse ["one" "red"])
+;(partition 2 (seq [])), (partition 2 ["one" "two" "three" "four"])
+;(interleave [] []), (interleave [1 2] ["anna" "blue"])
+;(interpose "value" []), (interpose "und" ["horse" "water" "food"])
